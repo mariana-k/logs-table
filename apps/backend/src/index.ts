@@ -1,19 +1,14 @@
 import express from 'express'
-console.log('express imported');
 import cors from 'cors'
-import { PrismaClient } from '@prisma/client'
 import logsRouter from './routes/logs'
 import swaggerUi from 'swagger-ui-express'
 import swaggerJSDoc from 'swagger-jsdoc'
 import dotenv from 'dotenv'
-import { Request, Response, NextFunction } from 'express'
-
-console.log('index.ts started');
+import { Request, Response } from 'express'
 
 dotenv.config()
 
 const app = express()
-const prisma = new PrismaClient()
 
 app.use(cors())
 app.use(express.json())
@@ -33,7 +28,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 app.use('/logs', logsRouter)
 
-app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+app.use((err: any, req: Request, res: Response) => {
   console.error(err)
   res.status(500).json({ error: 'Internal Server Error' })
 })
