@@ -12,8 +12,10 @@
 
 The app is deployed on AWS EC2
 
-Frontend: http://ec2-54-87-144-124.compute-1.amazonaws.com:5173
-Backend: http://ec2-54-87-144-124.compute-1.amazonaws.com:4000/api-docs/
+### Frontend: 
+http://ec2-54-87-144-124.compute-1.amazonaws.com:5173
+### Backend: 
+http://ec2-54-87-144-124.compute-1.amazonaws.com:4000/api-docs/
 
 ## UI Screenshot
 <img width="857" height="1006" alt="Screenshot 2025-07-20 at 19 24 41" src="https://github.com/user-attachments/assets/04bf0018-6e60-48e2-99df-bd9ab32fbd2a" />
