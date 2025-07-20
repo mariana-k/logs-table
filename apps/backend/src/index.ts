@@ -33,8 +33,8 @@ app.use((err: any, req: Request, res: Response) => {
   res.status(500).json({ error: 'Internal Server Error' })
 })
 
-const port = process.env.PORT || 4000
-app.listen(port, () => {
+const port = Number(process.env.PORT) || 4000
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server running on http://localhost:${port}`)
   console.log(`Swagger docs at http://localhost:${port}/api-docs`)
 }) 
