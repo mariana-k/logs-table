@@ -1,1 +1,78 @@
-# logs-table
+# Logs Table App
+
+## Prerequisites
+
+- Node.js (v18+ recommended)
+- npm
+- PostgreSQL database (local or remote)
+
+---
+
+## Backend Setup
+
+```sh
+cd apps/backend
+npm install
+```
+
+1. **Configure Database:**
+   - Copy `.env.example` to `.env` (if present) or create `.env`:
+     ```
+     DATABASE_URL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE
+     ```
+2. **Prisma:**
+   ```sh
+   npx prisma migrate dev --name init
+   npx prisma generate
+   ```
+3. **Run backend:**
+   ```sh
+   npm run dev
+   # or
+   npm start
+   ```
+   - API: http://localhost:4000/logs
+   - Swagger: http://localhost:4000/api-docs
+
+---
+
+## Frontend Setup
+
+```sh
+cd apps/frontend
+npm install
+```
+
+1. **Configure API URL:**
+   - Create `.env`:
+     ```
+     VITE_API_URL=http://localhost:4000
+     ```
+2. **Run frontend:**
+   ```sh
+   npm run dev
+   ```
+   - App: http://localhost:5173
+
+---
+
+## Linting
+
+- **Frontend:**
+  ```sh
+  cd apps/frontend
+  npm run lint
+  ```
+- **Backend:**
+  ```sh
+  cd apps/backend
+  npm run lint
+  ```
+
+---
+
+## Notes
+
+- Make sure your database is running and accessible.
+- For shadcn/ui or Sonner toasts, see their docs if you want to customize further.
+- For production, set proper environment variables and use a process manager (e.g., pm2).
