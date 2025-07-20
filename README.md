@@ -8,6 +8,13 @@
 
 ---
 
+## Deployment
+
+The app is deployed on AWS EC2
+
+Frontend: http://ec2-54-87-144-124.compute-1.amazonaws.com:5173
+Backend: http://ec2-54-87-144-124.compute-1.amazonaws.com:4000/api-docs/
+
 ## Backend Setup
 
 ```sh
